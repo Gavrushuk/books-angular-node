@@ -1,0 +1,99 @@
+<form name="postForm" novalidate ng-submit="createPost()">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Create new post</h3>
+        </div>
+        <div class="panel-body">
+          <style>
+            .errors {
+              color: red;
+            }
+          </style>
+
+          <div>
+            <label for="fname">First Name:</label>
+            <input class="form-control" type="text" minlength="5" maxlength="50" ng-model="postName" name="fName" id="fname" required>
+
+            <div ng-if=" postForm.fName.$touched" ng-messages="postForm.fName.$error">
+              <p ng-message="required" class="errors">* First Name is required</p>
+              <p ng-message="minlength" class="errors">* Min length should be 5 symbols</p>
+              <p ng-message="maxlength" class="errors">* Max length should be less than 50 symbols</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="lname">Last Name:</label>
+            <input class="form-control" type="text" minlength="5" maxlength="50" ng-model="postLName" name="lname" id="lname" required>
+
+            <div ng-if="postForm.lname.$touched" ng-messages="postForm.lname.$error">
+              <p ng-message="required" class="errors">* First Name is required</p>
+              <p ng-message="minlength" class="errors">* Min length should be 5 symbols</p>
+              <p ng-message="maxlength" class="errors">* Max length shold be less than 50 symbol</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" ng-model="postEmail" name="email" id="email" required>
+
+            <div ng-if="postForm.email.$touched" ng-messages="postForm.email.$error">
+              <p ng-message="required" class="errors">* Email is required</p>
+              <p ng-message="email" class="errors">* Invalid Email</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="phone">Phone:</label>
+            <input class="form-control" type="text" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" ng-model="postPhone"
+              name="phone" id="phone" required>
+
+            <div ng-if="postForm.phone.$touched" ng-messages="postForm.phone.$error">
+              <p ng-message="required" class="errors">* Phone is required</p>
+              <div ng-message="pattern" class="errors">* Must be a valid 10 digit phone number</div>
+            </div>
+          </div>
+
+          <div>
+            <label for="birth">Birthday:</label>
+            <input class="form-control" type="date" ng-model="postBirth" name="birth" id="birth" required>
+
+            <div ng-if="postForm.birth.$touched" ng-messages="postForm.birth.$error">
+              <p ng-message="required" class="errors">* Email is required</p>
+              <p ng-message="birth" class="errors">* Invalid Date</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="country">Country:</label>
+            <input class="form-control" type="text" ng-model="postCountry" name="country" id="country" required>
+
+            <div ng-if="postForm.country.$touched" ng-messages="postForm.country.$error">
+              <p ng-message="required" class="errors">* Country is required</p>
+            </div>
+          </div>
+
+
+          <div>
+            <label for="city">City:</label>
+            <input class="form-control" type="text" ng-model="postCity" name="city" id="city" required>
+
+            <div ng-if="postForm.city.$touched" ng-messages="postForm.city.$error">
+              <p ng-message="required" class="errors">* City is required</p>
+            </div>
+          </div>
+
+       </div>
+
+    <div class="panel-footer">
+      <button class="btn btn-default" ng-disabled="!postForm.$valid">Save</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<button onclick="delPosts()">del</button>
+
+</form>
+

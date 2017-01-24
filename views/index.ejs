@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="blog-app">
+  <head>
+    <title>AngualrJS App</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <base href="/">
+  </head>
+
+  <body ng-controller="MainCtrl as main">
+    
+    <div class="container">
+
+      <ui-view></ui-view>
+    
+    </div>
+
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/angular-messages/angular-messages.min.js"></script>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script src="/app/app.js"></script>
+    <script src="/app/services/book.service.js"></script>
+
+    <!-- Home component -->
+    <script src="/app/components/home/home.module.js"></script>
+    <script src="/app/components/home/controllers/home.controller.js"></script>
+  </body>
+</html>
