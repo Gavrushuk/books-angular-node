@@ -1,7 +1,7 @@
 angular.module('blog-app', [
   'ui.router',
   'ngMessages',
-
+  'ngAnimate',
   // Components
   'blog-app.home'
   

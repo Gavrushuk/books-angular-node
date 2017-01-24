@@ -1,1 +1,30 @@
-{{books}}
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading text-center" style="height: 50px;">
+    <div class="pull-left">
+      <b>DataBase Book</b>
+    </div>
+    <div class="pull-right">
+      <a ui-sref="create" class="btn btn-primary">Create</a>  
+    </div>  
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <td class="text-center"><b>Choose</b></td>
+        <td><b>Title</b></td>
+        <td><b>Author</b></td>
+        <td><b>Category</b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="book in books">
+        <td class="text-center"><input type="checkbox"></td>
+        <td ng-bind="book.title"></td>
+        <td ng-bind="book.author"></td>
+        <td ng-bind="book.category"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
