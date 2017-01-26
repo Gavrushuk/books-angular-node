@@ -1,11 +1,16 @@
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading text-center" style="height: 50px;">
-    <div class="pull-left">
+  <div class="panel-heading text-center" style="display: inline-block;">
+    <div class="pull-left" style="padding: 6px 0 0 0">
       <b>DataBase Book</b>
+      <a class="btn btn-defoult" ng-click="getBooks()" style="padding: 0; margin-left: 5px"><i class="glyphicon glyphicon-refresh"></i></a>
     </div>
     <div class="pull-right">
       <a ui-sref="create" class="btn btn-primary">Create</a>  
+    </div>
+    <div class="input-group" style="padding: 0 15px">
+      <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="search">
     </div>  
   </div>
   <!-- Table -->
@@ -18,12 +23,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="book in books">
+      <tr ng-repeat="book in books | filter: search">
         <td ng-bind="book.title"></td>
         <td ng-bind="book.author"></td>
         <td ng-bind="book.category | categoryParse"></td>
-        <td><button class="btn btn-info" ui-sref="edit({id: book._id})">Edit</button></td>
-        <td><button class="btn btn-danger" ng-click="removeBook(book._id);">Del</button></td>
+        <td style="width: 50px"><button class="btn btn-info" ui-sref="edit({id: book._id})">Edit</button></td>
+        <td style="width: 50px"><button class="btn btn-danger" ng-click="removeBook(book._id);">Del</button></td>
       </tr>
     </tbody>
   </table>

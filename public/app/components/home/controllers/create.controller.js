@@ -12,5 +12,9 @@ angular.module('blog-app.home')
       .then(response => {
         $state.transitionTo("home")
       });
+    }
+    
+    $scope.goBack = function() {
+      $state.transitionTo("home");
     }  
   }]);

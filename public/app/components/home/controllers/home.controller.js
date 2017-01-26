@@ -1,6 +1,6 @@
 angular.module('blog-app.home')
   .controller('HomeCtrl', ['$scope', '$http', 'BookService', function ($scope, $http, BookService) {
-    function getBooks() {
+    $scope.getBooks = function() {
       BookService
         .getAllBooks()
         .then(response => {
@@ -8,12 +8,12 @@ angular.module('blog-app.home')
         });
     }
 
-    getBooks();
+    $scope.getBooks();
 
     $scope.removeBook = function (id) {
       BookService
         .removeBook(id)
-        .then(response => getBooks());
+        .then(response =>  $scope.getBooks());
     }
 
   }]);

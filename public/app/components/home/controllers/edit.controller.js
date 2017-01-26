@@ -8,6 +8,10 @@ angular.module('blog-app.home')
         $scope.bookAuthor = $scope.book.author;
         $scope.bookCategory = $scope.book.category && $scope.book.category[0];
       });
+
+    $scope.goBack = function() {
+      $state.transitionTo("home");
+    }
     
     $scope.editBook = function() {
       BookService
