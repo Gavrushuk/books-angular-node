@@ -11,4 +11,9 @@ angular.module('blog-app.home', [])
         templateUrl: '/app/components/home/views/create.html',
         controller: 'CreateCtrl'
       })
+      .state('edit', {
+        url: '/edit/:id',
+        templateUrl: '/app/components/home/views/edit.html',
+        controller: 'EditCtrl'
+      })
   }])

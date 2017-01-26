@@ -3,6 +3,7 @@ let app = express();
 let bodyParser = require('body-parser');
 let routes = require('./router');
 let mongoose = require('mongoose');
+let cors = require('cors');
 
 mongoose.connect('mongodb://localhost:27017/books', err => {
   if (err) {
@@ -11,6 +12,7 @@ mongoose.connect('mongodb://localhost:27017/books', err => {
   console.log('Connected to DB');
 })
 
+app.use(cors());
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/assets'));
 

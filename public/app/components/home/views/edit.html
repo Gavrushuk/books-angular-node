@@ -1,11 +1,11 @@
-<h1>Create new Book</h1>
+<h1>Edit Book</h1>
 
-<form name="bookForm" novalidate ng-submit="createBook()">
+<form name="bookForm" novalidate ng-submit="editBook()">
   <div class="row">
     <div class="col-md-4">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Create new book</h3>
+          <h3 class="panel-title">Edit book</h3>
         </div>
         <div class="panel-body">
           <style>
@@ -38,11 +38,10 @@
 
           <div>
             <label for="category">Category:</label>
-            <input class="form-control" type="text" maxlength="20" ng-model="bookCategory" name="category" id="category" required>
+            <input class="form-control" type="text" ng-model="bookCategory" name="category" id="category" required>
             
             <div ng-if="bookForm.category.$touched" ng-messages="bookForm.category.$error">
               <p ng-message="required" class="errors">* Category is required</p>
-              <p ng-message="maxlength" class="errors">* Max length shold be less than 20 symbol</p>
             </div>
             
           </div>
@@ -50,7 +49,7 @@
        </div>
 
     <div class="panel-footer">
-      <button class="btn btn-default">Create</button>
+      <button class="btn btn-default">Edit</button>
     </div>
   </div>
 </div>

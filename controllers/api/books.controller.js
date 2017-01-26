@@ -21,3 +21,19 @@ module.exports.createBook = (req, res, next) => {
     .createBook(req.body)
     .then(result => res.json(result), err => next(err));
 }
+
+module.exports.removeBook = (req, res, next) => {
+  Post
+    .removeBook(req.params.id)
+    .then(book => {
+      res.json(book);
+    }, err => next(err));
+}
+
+module.exports.editBook = (req, res, next) => {
+  Post
+    .editBook(req.params.id, req.body)
+    .then(book => {
+      res.json(book);
+    }, err => next(err));
+}

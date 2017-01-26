@@ -10,5 +10,7 @@ let bookSchema = new mongoose.Schema({
 bookSchema.statics.getAllPosts = statics.getAllPosts;
 bookSchema.statics.getBook = statics.getBook;
 bookSchema.statics.createBook = statics.createBook;
+bookSchema.statics.removeBook = statics.removeBook;
+bookSchema.statics.editBook = statics.editBook;
 
 module.exports = mongoose.model('Book', bookSchema);
